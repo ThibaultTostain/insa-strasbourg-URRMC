@@ -15,6 +15,5 @@ Contents
    :maxdepth: 2
    usage
    api
-   installation_linux/index
-   installation_linux/installation_machine_virtuelle
-   installation_linux/installation_ros1_noetic
+   installation_machine_virtuelle
+   installation_ros1_noetic
