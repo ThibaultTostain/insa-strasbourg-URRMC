@@ -1,5 +1,7 @@
-Installation Linux
-==================
+Installation
+============
+
+Guide d'installation pour différents environnements.
 
 .. toctree::
    :maxdepth: 1

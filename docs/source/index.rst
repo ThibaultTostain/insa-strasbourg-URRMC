@@ -12,8 +12,9 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Table des matières
+
    usage
    api
-   installation_linux/index
-   installation_machine_virtuelle
-   installation_ros1_noetic
+   installation/index
