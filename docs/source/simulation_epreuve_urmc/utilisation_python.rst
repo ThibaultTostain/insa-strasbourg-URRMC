@@ -187,24 +187,120 @@ Exécution des Nœuds
 ~~~~~~~~~~~~~~~~~~
 
 Terminal 1 (Master) :
+
 .. code-block:: bash
 
     roscore
 
 Terminal 2 (Publisher) :
+
 .. code-block:: bash
 
     rosrun mon_package publisher.py
 
 Terminal 3 (Subscriber) :
+
 .. code-block:: bash
 
     rosrun mon_package subscriber.py
 
-Bonnes Pratiques
----------------
+Fichiers Launch : Automatisation du Démarrage des Nœuds
+-----------------------------------------------------
 
-- Utilisez ``rospy.is_shutdown()`` pour gérer les arrêts
-- Utilisez ``rospy.loginfo()`` pour les logs
-- Gérez les exceptions ROS
-- Pensez à la réutilisabilité du code
+Introduction aux Fichiers Launch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Les fichiers launch sont des fichiers XML qui permettent de :
+- Démarrer plusieurs nœuds simultanément
+- Configurer des paramètres globaux
+- Définir des arguments
+- Simplifier le lancement de systèmes complexes
+
+Structure de Base d'un Fichier Launch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Créez un fichier ``mon_noeud.launch`` dans le dossier ``launch/`` de votre package :
+
+.. code-block:: xml
+
+    <launch>
+        <!-- Démarrage de plusieurs nœuds -->
+        <node name="talker" pkg="mon_package" type="publisher.py" output="screen"/>
+        <node name="listener" pkg="mon_package" type="subscriber.py" output="screen"/>
+        
+        <!-- Configuration de paramètres -->
+        <param name="mon_parametre" value="valeur_par_defaut"/>
+        
+        <!-- Groupe de nœuds -->
+        <group ns="mon_namespace">
+            <node name="noeud_specifique" pkg="mon_package" type="mon_script.py"/>
+        </group>
+    </launch>
+
+Attributs Principaux des Nœuds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``name`` : Nom unique du nœud
+- ``pkg`` : Package contenant le script
+- ``type`` : Nom du script exécutable
+- ``output="screen"`` : Affiche les logs dans le terminal
+- ``respawn="true"`` : Redémarre le nœud s'il plante
+- ``required="true"`` : Arrête roscore si le nœud s'arrête
+
+Exemple Avancé de Launch
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+    <launch>
+        <!-- Arguments avec valeurs par défaut -->
+        <arg name="robot_name" default="turtlebot3"/>
+        
+        <!-- Utilisation de variables -->
+        <param name="robot_description" 
+               command="$(find xacro)/xacro '$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro'" />
+        
+        <!-- Nœuds avec arguments -->
+        <node name="robot_state_publisher" pkg="robot_state_publisher" 
+              type="robot_state_publisher">
+            <param name="robot_description" 
+                   command="$(find xacro)/xacro '$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro'"/>
+        </node>
+        
+        <!-- Remapping de topics -->
+        <node name="my_node" pkg="mon_package" type="mon_script.py">
+            <remap from="input_topic" to="modified_input"/>
+            <remap from="output_topic" to="modified_output"/>
+        </node>
+        
+        <!-- Inclusion conditionnelle -->
+        <include if="$(arg debug_mode)" 
+                 file="$(find mon_package)/launch/debug.launch"/>
+    </launch>
+
+Types d'Arguments Launch
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. Arguments Simples
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+    <arg name="mon_argument" default="valeur_defaut"/>
+    <arg name="mon_argument" value="valeur_fixe"/>
+
+2. Arguments Booléens
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+    <arg name="debug_mode" default="false"/>
+    <node if="$(arg debug_mode)" ... />
+
+3. Passage d'Arguments en Ligne de Commande
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    roslaunch mon_package mon_fichier.launch mon_argument:=ma_valeur
+
