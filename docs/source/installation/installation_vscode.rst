@@ -7,6 +7,7 @@ Télécharger VsCode
 Ouvrir un terminal et entrer les commandes :
 
 .. code-block:: bash
+
    sudo apt update
    sudo apt install curl apt-transport-https
 
@@ -16,11 +17,13 @@ Ajouter le dépôt Microsoft
 Ajouter la clé GPG de Microsoft et le dépôt pour installer VsCode :
 
 .. code-block:: bash
+
    curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/packages.microsoft.gpg
 
 Puis, ajouter le dépôt à la liste des sources de votre système :
 
 .. code-block:: bash
+
    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 
 Installer VsCode
@@ -29,6 +32,7 @@ Installer VsCode
 Mettre à jour les sources des paquets et installer VsCode :
 
 .. code-block:: bash
+
    sudo apt update
    sudo apt install code
 

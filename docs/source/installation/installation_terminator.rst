@@ -9,6 +9,7 @@ Télécharger Terminator
 Ouvrir un terminal et entrer la commande :
 
 .. code-block:: bash
+
     sudo apt install terminator
 
 Lancer Terminator
@@ -17,6 +18,7 @@ Lancer Terminator
 Ouvrir un terminal et entrer la commande :
 
 .. code-block:: bash
+
     terminator
 
 Raccourcis utiles dans Terminator
