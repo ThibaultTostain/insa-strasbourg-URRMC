@@ -37,6 +37,6 @@ Voici une liste des raccourcis clavier les plus courants dans Terminator :
 
 Ces raccourcis permettent de travailler plus efficacement avec plusieurs terminaux ouverts en même temps.
 
-.. image:: _static/images/install_terminator.png
+.. image:: _static/install_terminator.png
    :alt: Capture d'écran de Terminator
    :width: 200
