@@ -14,3 +14,6 @@ Contents
 .. toctree::
    usage
    api
+   installation_linux/index
+   installation_machine_virtuelle
+   installation_ros1_noetic
