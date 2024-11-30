@@ -64,12 +64,14 @@ Visual Studio Code (VSCode)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Avantages :
+
 - Support ROS intégré
 - Extensions Python
 - Débogage intégré
 - Auto-complétion
 
 Extensions VSCode recommandées :
+
 - "ROS" 
 - "Python"
 - "CMake"
@@ -211,6 +213,7 @@ Introduction aux Fichiers Launch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Les fichiers launch sont des fichiers XML qui permettent de :
+
 - Démarrer plusieurs nœuds simultanément
 - Configurer des paramètres globaux
 - Définir des arguments
