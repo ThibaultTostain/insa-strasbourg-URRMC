@@ -8,6 +8,6 @@ Guide d'installation pour différents environnements.
    :caption: Installation
 
    installation_machine_virtuelle
-   installation_ros1_noEtic
+   installation_ros1_noetic
    installation_terminator
    installation_vscode
