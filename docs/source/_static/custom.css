@@ -1,0 +1,30 @@
+/* Applique la justification au texte des paragraphes */
+p {
+    text-align: justify;
+}
+
+/* Optionnel : Ajuste aussi la justification pour les listes */
+ul, ol {
+    text-align: justify;
+}
+
+/* Optionnel : Ajoute une légère marge pour les listes imbriquées */
+ul ul, ol ol {
+    margin-left: 1.5em;
+}
+
+/* Améliore l'apparence des titres (facultatif) */
+h1, h2, h3, h4, h5, h6 {
+    text-align: left; /* Les titres restent alignés à gauche */
+}
+
+/* Optionnel : Style des blocs de code */
+div.highlight pre {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Assure un bon espacement des lignes */
+body {
+    line-height: 1.6;
+}

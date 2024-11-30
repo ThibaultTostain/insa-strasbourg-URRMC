@@ -1,57 +1,49 @@
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information -----------------------------------------------------
+project = 'Documentation URMC 2024'
+copyright = '2024, Promotion GE5 24-25'
+author = 'ENSISA - GE5'
 
-project = 'Lumache'  # Nom du projet
-copyright = '2021, Graziella'  # Informations de copyright
-author = 'Graziella'  # Auteur de la documentation
-
-# Version et release du projet
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
-
-# Extensions utilisées par Sphinx
 extensions = [
-    'sphinx.ext.duration',  # Mesure le temps de construction
-    'sphinx.ext.doctest',  # Test des blocs de code dans la documentation
-    'sphinx.ext.autodoc',  # Génère automatiquement la documentation des modules
-    'sphinx.ext.autosummary',  # Génère automatiquement des résumés
-    'sphinx.ext.intersphinx',  # Lien vers d'autres documentations
-    'sphinx_copybutton',  # Ajoute un bouton "copier" sur les blocs de code
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+    'sphinx_copybutton',  # Pour ajouter un bouton "copier" aux blocs de code
 ]
 
-# Configuration de intersphinx pour le lien vers d'autres documentations
+# Mapping pour intersphinx
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),  # Documentation Python
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),  # Documentation Sphinx
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
-intersphinx_disabled_domains = ['std']  # Désactiver certains domaines par défaut
+intersphinx_disabled_domains = ['std']
 
 # Chemin vers les templates personnalisés
 templates_path = ['_templates']
 
 # -- Options for HTML output -------------------------------------------------
-
-# Thème pour la documentation HTML
 html_theme = 'sphinx_rtd_theme'
+
+# Chemin vers les fichiers statiques (CSS, JS, images)
+html_static_path = ['_static']
+
+# Inclusion du fichier CSS personnalisé
+html_css_files = [
+    'custom.css',  # Nom du fichier CSS dans _static
+]
 
 # Options spécifiques pour le thème sphinx_rtd_theme
 html_theme_options = {
-    'collapse_navigation': False,  # Garder les sous-menus ouverts
-    'navigation_depth': 4,         # Profondeur de la navigation dans la barre latérale
-    'style_external_links': True,  # Ajouter une icône aux liens externes
+    'collapse_navigation': False,  # Garde les sous-menus ouverts par défaut
+    'navigation_depth': 4,         # Permet d'afficher 4 niveaux de navigation
 }
 
 # -- Options for EPUB output -------------------------------------------------
-
-# Format d'affichage des URLs dans les fichiers EPUB
 epub_show_urls = 'footnote'
-
-# -- Options supplémentaires (facultatif) ------------------------------------
-
-# Configuration des chemins (par exemple pour ajouter des dossiers de modules)
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('../src'))
