@@ -1,8 +1,5 @@
-Suivi de ligne
-==============
-
-Détection de Ligne Turtlebot3
-============================
+Détection de Ligne Gazebo
+=========================
 
 Ce tutoriel vous guidera à travers le processus de détection et de suivi de ligne pour un robot Turtlebot3.
 
@@ -94,6 +91,26 @@ Conseils :
   * Détection de ligne jaune
   * Détection de ligne blanche
 
+.. image:: pictures/install_terminator.png
+   :alt: Capture d'écran de Terminator
+   :width: 600
+   :align: center
+
+.. image:: pictures/noetic_detect_image_lane.png
+   :alt: img lane
+   :width: 600
+   :align: center
+
+.. image:: pictures/noetic_detect_white_lane.png
+   :alt: white lane
+   :width: 600
+   :align: center
+
+.. image:: pictures/noetic_detect_yellow_lane.png
+   :alt: yellow lane
+   :width: 600
+   :align: center
+
 8. Reconfiguration
 ~~~~~~~~~~~~~~~~~
 
@@ -105,6 +122,11 @@ Conseils :
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Dans ``rqt_reconfigure``, sélectionnez ``detect_lane`` et ajustez les paramètres de filtrage des couleurs.
+
+.. image:: pictures/noetic_detect_reconfigure_lane.png
+   :alt: reconfigure lane
+   :width: 600
+   :align: center
 
 Conseils de Calibration des Couleurs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,6 +154,11 @@ Processus de Calibration HSV
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ouvrez ``lane.yaml`` dans ``turtlebot3_autorace_detect/param/lane/`` et enregistrez les nouvelles valeurs.
+
+.. image:: pictures/noetic_lane_lane.png
+   :alt: yaml lane
+   :width: 600
+   :align: center
 
 11. Finalisation
 ~~~~~~~~~~~~~~~
