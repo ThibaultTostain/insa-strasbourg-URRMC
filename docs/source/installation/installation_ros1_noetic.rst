@@ -1,7 +1,7 @@
-Installation de ROS
-===================
+Installation de ROS1 Noetic
+===========================
 
-Cette section détaille les étapes nécessaires pour installer ROS Noetic ainsi que les packages additionnels nécessaires à l'utilisation de TurtleBot3 et de Gazebo.
+Instructions pour installer **ROS1 Noetic** sur Linux.
 
 Ouvrir un terminal :
 --------------------

@@ -4,7 +4,8 @@ Installation
 Guide d'installation pour différents environnements.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: Installation
 
    installation_machine_virtuelle
-   installation_ros1_noetic
+   installation_ros
