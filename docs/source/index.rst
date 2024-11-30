@@ -15,5 +15,3 @@ Contents
    :maxdepth: 2
    usage
    api
-   installation_machine_virtuelle
-   installation_ros1_noetic
