@@ -39,4 +39,4 @@ Ces raccourcis permettent de travailler plus efficacement avec plusieurs termina
 
 .. image:: _static/images/install_terminator.png
    :alt: Capture d'écran de Terminator
-   :width: 600
+   :width: 200
