@@ -2,8 +2,8 @@
 
 # -- Project information -----------------------------------------------------
 project = 'Documentation URMC 2024'
-copyright = '2024, Promotion GE5 24-25'
-author = 'ENSISA - GE5'
+copyright = '2024, INSA Promotion GE5 24-25'
+author = 'INSA - GE5'
 
 release = '1.0'
 version = '1.0.0'
