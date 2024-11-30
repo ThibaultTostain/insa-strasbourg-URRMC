@@ -36,3 +36,7 @@ Voici une liste des raccourcis clavier les plus courants dans Terminator :
 - **F11** : Basculer en mode plein écran
 
 Ces raccourcis permettent de travailler plus efficacement avec plusieurs terminaux ouverts en même temps.
+
+.. image:: _static/images/install_terminator.png
+   :alt: Capture d'écran de Terminator
+   :width: 600
