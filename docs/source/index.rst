@@ -24,3 +24,5 @@ Contents
    usage
    api
    installation/index
+   tutoriel_robotis/index
+   turtlebot_reel/index
