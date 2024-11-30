@@ -1,25 +1,26 @@
 Installation et utilisation de Terminator
-========================================
+=========================================
 
-Terminator est un émulateur de terminal, qui permet d'ouvrir plusieurs onglets dans une seule fenêtre.
+Terminator est un émulateur de terminal, qui permet d'ouvrir plusieurs onglets sur une seule fenêtre, ce qui est bien pratique pour l'utilisation de ROS, qui nécessite toujours plusieurs terminaux.
 
-### Télécharger Terminator
-
-Ouvrir un terminal et entrer la commande :
-
-.. code-block:: bash
-
-   sudo apt install terminator
-
-### Lancer Terminator
+Télécharger Terminator
+----------------------
 
 Ouvrir un terminal et entrer la commande :
 
 .. code-block:: bash
+    sudo apt install terminator
 
-   terminator
+Lancer Terminator
+-----------------
 
-### Raccourcis utiles dans Terminator
+Ouvrir un terminal et entrer la commande :
+
+.. code-block:: bash
+    terminator
+
+Raccourcis utiles dans Terminator
+---------------------------------
 
 Voici une liste des raccourcis clavier les plus courants dans Terminator :
 
@@ -32,3 +33,4 @@ Voici une liste des raccourcis clavier les plus courants dans Terminator :
 - **Alt + Flèche directionnelle** : Naviguer entre les terminaux divisés
 - **F11** : Basculer en mode plein écran
 
+Ces raccourcis permettent de travailler plus efficacement avec plusieurs terminaux ouverts en même temps.
