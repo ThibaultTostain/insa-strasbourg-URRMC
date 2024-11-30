@@ -1,13 +1,14 @@
-### Afficher une image
+Installation et utilisation de Terminator
+========================================
 
-Pour afficher une image centrée dans ce document, utilisez la syntaxe suivante :
+Terminator est un émulateur de terminal, qui permet d'ouvrir plusieurs onglets dans une seule fenêtre.
 
-.. figure::
 ### Télécharger Terminator
 
 Ouvrir un terminal et entrer la commande :
 
 .. code-block:: bash
+
    sudo apt install terminator
 
 ### Lancer Terminator
@@ -15,6 +16,7 @@ Ouvrir un terminal et entrer la commande :
 Ouvrir un terminal et entrer la commande :
 
 .. code-block:: bash
+
    terminator
 
 ### Raccourcis utiles dans Terminator
@@ -30,11 +32,3 @@ Voici une liste des raccourcis clavier les plus courants dans Terminator :
 - **Alt + Flèche directionnelle** : Naviguer entre les terminaux divisés
 - **F11** : Basculer en mode plein écran
 
-### Afficher une image
-
-Pour afficher une image dans ce document, utilisez la syntaxe suivante :
-
-.. image:: /_static/images/install_terminator.png
-    :alt: Description de l'image
-    :width: 600px
-    :align: center
