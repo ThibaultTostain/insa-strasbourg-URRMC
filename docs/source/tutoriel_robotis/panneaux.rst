@@ -33,9 +33,15 @@ Positionnement du Robot
 ^^^^^^^^^^^^^^^^^^^^^^
 
 - Déplacez le robot jusqu'à ce que les panneaux soient clairement visibles par les caméras
-- Utilisez les touches directionnelles pour :
-  * Avancer/reculer
-  * Tourner à gauche/droite
+
+Pour cela, cliquez sur le robot dans Gazebo pour le sélectionner, puis utilisez les touches suivantes :
+- Touche ``T`` : Mode Translation
+  - Permet de déplacer le robot dans le plan (x, y)
+  - Cliquez et faites glisser pour repositionner
+  
+- Touche ``R`` : Mode Rotation
+  - Permet de faire pivoter le robot
+  - Cliquez et faites tourner pour ajuster l'orientat
 - Objectif : Placer les panneaux dans le champ de vision optimal
 
 3. Visualisation de l'Image
