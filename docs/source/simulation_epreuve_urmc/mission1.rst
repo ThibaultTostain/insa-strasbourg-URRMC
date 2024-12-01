@@ -42,7 +42,7 @@ Plusieurs nœuds sont dédiés à la perception de l'environnement. Le nœud de 
 
 Des nœuds spécialisés gèrent la détection du damier et du panneau STOP, déclenchant les arrêts aux moments critiques de la mission en publiant "0" sur le topic /command.
 
-Dans le dossier mission1, un dossiers pictures a été crée. Il contient les images du damier et du panneau STOP. Il faut les modifiees en plaçant le robot devant le damier et le panneau STOP, et en enregistrant les images sous les noms damier.png et stop.png.
+Dans le dossier mission1, un dossier "pictures" a été crée, qui contient les images du damier et du panneau STOP. Il faut les modifiees en plaçant le robot devant le damier et le panneau STOP, et en enregistrant les images sous les noms damier.png et stop.png.
 
 Nœud de contrôle
 ^^^^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ Node Graph
 Programmes 
 ---------------------
 
-Lzncement de la Mission 1 : 
+Lancement de la Mission 1 : 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
@@ -156,6 +156,7 @@ master_node.py
 ^^^^^^^^^^^^^^
 
 .. code-block:: bash
+
     master_node.py
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
