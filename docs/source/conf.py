@@ -47,3 +47,18 @@ html_theme_options = {
 
 # -- Options for EPUB output -------------------------------------------------
 epub_show_urls = 'footnote'
+
+# -- Copy additional files (e.g., videos) to the build directory -------------
+import os
+import shutil
+
+def setup(app):
+    app.connect("build-finished", copy_extra_files)
+
+def copy_extra_files(app, exception):
+    """Copies videos and other extra files to the output directory after building."""
+    if exception is None:  # Execute only if the build was successful
+        source_dir = os.path.abspath("./source/simulation_epreuve_urmc/video")
+        dest_dir = os.path.join(app.outdir, "simulation_epreuve_urmc/video")
+        if os.path.exists(source_dir):
+            shutil.copytree(source_dir, dest_dir, dirs_exist_ok=True)
