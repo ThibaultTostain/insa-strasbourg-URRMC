@@ -19,7 +19,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
-    'sphinxcontrib.video'
+    'sphinxcontrib.video',
 
     'sphinx_copybutton',  # Pour ajouter un bouton "copier" aux blocs de code
 ]
