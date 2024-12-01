@@ -60,7 +60,7 @@ Node Graph
 Démonstration 
 ---------------------
 
-Detection de damier
+Détection de damier
 ^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
