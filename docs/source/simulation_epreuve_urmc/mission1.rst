@@ -231,6 +231,7 @@ stop_at_damier.py
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
+    
     #!/usr/bin/env python 
     # Author: PALISSE Volia, WAECHTER Thibaut, YOUBI Lounès
 
