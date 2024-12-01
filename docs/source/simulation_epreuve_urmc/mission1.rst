@@ -66,7 +66,9 @@ Détection de damier
 .. raw:: html
 
     <video width="640" height="360" controls>
-        <source src="" type="videos/damier.webm">
+        <source src="videos/damier" type="video/webm">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+
     </video>
 
 Programmes 
