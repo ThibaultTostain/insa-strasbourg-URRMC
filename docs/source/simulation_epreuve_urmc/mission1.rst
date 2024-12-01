@@ -63,12 +63,6 @@ Démonstration
 Détection de damier
 ^^^^^^^^^^^^^^^^^^^
 
-.. video:: videos/damier.webm
-   :width: 500
-   :height: 300
-   :autoplay:
-   :nocontrols:
-
 .. raw:: html
 
     <video width="640" height="360" controls>

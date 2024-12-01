@@ -20,7 +20,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',  # Pour ajouter un bouton "copier" aux blocs de code
-    'sphinxcontrib.video',
 ]
 
 # Mapping pour intersphinx
