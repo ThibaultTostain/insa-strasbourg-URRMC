@@ -1,3 +1,7 @@
+# -- Copy additional files (e.g., videos) to the build directory -------------
+import os
+import shutil
+
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information -----------------------------------------------------
@@ -48,9 +52,7 @@ html_theme_options = {
 # -- Options for EPUB output -------------------------------------------------
 epub_show_urls = 'footnote'
 
-# -- Copy additional files (e.g., videos) to the build directory -------------
-import os
-import shutil
+
 
 def setup(app):
     app.connect("build-finished", copy_extra_files)
