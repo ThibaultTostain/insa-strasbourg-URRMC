@@ -60,7 +60,7 @@ def setup(app):
 def copy_extra_files(app, exception):
     """Copies videos and other extra files to the output directory after building."""
     if exception is None:  # Execute only if the build was successful
-        source_dir = os.path.abspath("./source/simulation_epreuve_urmc/video")
-        dest_dir = os.path.join(app.outdir, "simulation_epreuve_urmc/video")
+        source_dir = os.path.abspath("simulation_epreuve_urmc/videos")
+        dest_dir = os.path.join(app.outdir, "simulation_epreuve_urmc/videos")
         if os.path.exists(source_dir):
             shutil.copytree(source_dir, dest_dir, dirs_exist_ok=True)
