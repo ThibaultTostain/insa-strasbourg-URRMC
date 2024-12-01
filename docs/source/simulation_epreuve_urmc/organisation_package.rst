@@ -4,7 +4,7 @@ Package Tournoi pour Turtlebot
 Présentation Générale
 --------------------
 
-Ce package est conçu pour organiser un tournoi de Turtlebot avec une architecture modulaire et flexible, permettant de gérer plusieurs missions de manière indépendante et évolutive.
+Cette page est conçue pour décrire l'organisation du package tournoi, permettant de gérer plusieurs missions de manière indépendante et évolutive.
 
 Structure du Package
 -------------------
@@ -36,7 +36,7 @@ L'arborescence complète du package ``tournoi`` se présente comme suit :
 Création du Package
 ------------------
 
-Pour initialiser le package dans votre workspace catkin :
+Initialisez le package dans votre workspace catkin :
 
 .. code-block:: bash
 
