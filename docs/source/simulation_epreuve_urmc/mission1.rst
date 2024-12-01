@@ -57,6 +57,18 @@ Node Graph
    :width: 600
    :align: center
 
+Démonstration 
+---------------------
+
+Detection de damier
+^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <video width="640" height="360" controls>
+        <source src="videos/damier.webm" type="video/webm">
+    </video>
+
 Programmes 
 ---------------------
 
@@ -231,7 +243,7 @@ stop_at_damier.py
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
-    
+
     #!/usr/bin/env python 
     # Author: PALISSE Volia, WAECHTER Thibaut, YOUBI Lounès
 
