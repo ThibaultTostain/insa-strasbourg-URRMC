@@ -21,8 +21,6 @@ Contents
    :maxdepth: 2
    :caption: Table des matières
 
-   usage
-   api
    installation/index
    tutoriel_robotis/index
    turtlebot_reel/index

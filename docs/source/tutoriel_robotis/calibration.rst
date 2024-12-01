@@ -132,10 +132,3 @@ Conseils Importants
 - Vérifiez visuellement l'alignement et la compensation de l'image
 - Enregistrez vos configurations pour une utilisation future
 
-Dépannage
----------
-
-En cas de problèmes :
-- Vérifiez que tous les packages ROS sont correctement installés
-- Assurez-vous que Gazebo fonctionne correctement
-- Redémarrez les nœuds si nécessaire

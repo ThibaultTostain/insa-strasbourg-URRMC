@@ -32,7 +32,3 @@ For example:
 >>> lumache.get_random_ingredients()
 ['shells', 'gorgonzola', 'parsley']
 
-.. autosummary::
-   :toctree: generated
-
-   lumache

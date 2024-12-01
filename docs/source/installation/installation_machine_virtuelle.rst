@@ -5,7 +5,7 @@ Prérequis
 ---------
 
 - Téléchargez l'image ISO de Ubuntu 20.04  depuis le site officiel de Ubuntu (desktop) : https://releases.ubuntu.com/focal/
-- Téléchargez et installez Oracle VM VirtualBox depuis le site officiel de VirtualBox : https://releases.ubuntu.com/focal/ 
+- Téléchargez et installez Oracle VM VirtualBox depuis le site officiel de VirtualBox : https://www.virtualbox.org/wiki/Downloads 
 
 Création de la machine virtuelle
 -------------------------------
@@ -57,10 +57,12 @@ Configuration du clavier et de la résolution
 --------------------------------------------
 
 1. Modifiez la configuration du clavier pour passer d'un clavier QWERTY à AZERTY :
+   
    - Allez dans les paramètres système, dans la section "Langues et région".
    - Cliquez sur "Gérer les langues installées" et ajoutez le français comme langue.
    - Sélectionnez le français comme langue par défaut.
 2. Modifiez la résolution de l'écran de la machine virtuelle pour qu'elle soit identique à votre écran hôte :
+   
    - Dans les paramètres de la machine virtuelle, allez dans l'onglet "Écran".
    - Ajustez la "Définition" en fonction de la résolution de votre écran.
 

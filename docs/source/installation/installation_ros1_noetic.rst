@@ -68,3 +68,15 @@ Pour tester la simulation, définissez le modèle TurtleBot3 et lancez un monde 
 
     export TURTLEBOT3_MODEL=burger
     roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+
+Télecharger le package de la compétition :
+------------------------------------------
+
+Pour télécharger le package de la compétition, placez vous dans /catkin_ws clonez le dépôt suivant :
+
+.. code-block:: bash
+
+    cd ~/catkin_ws/src/
+    git clone https://github.com/wafaesebbata/Turtlebot−simulation−for−Upper−Rhine−Robotic−Challenge.git
+    cd ~/catkin_ws
+    catkin_make

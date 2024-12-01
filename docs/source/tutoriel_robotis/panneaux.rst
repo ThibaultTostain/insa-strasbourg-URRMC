@@ -1,4 +1,4 @@
-Detection de panneau
+Détection de panneau
 ====================
 
 Ce tutoriel vous guidera à travers le processus de reconnaissance et de détection de panneaux pour un robot Turtlebot3.
@@ -35,16 +35,19 @@ Positionnement du Robot
 - Déplacez le robot jusqu'à ce que les panneaux soient clairement visibles par les caméras
 
 Pour cela, cliquez sur le robot dans Gazebo pour le sélectionner, puis utilisez les touches suivantes :
+
 - Touche ``T`` : Mode Translation
+  
   - Permet de déplacer le robot dans le plan (x, y)
   - Cliquez et faites glisser pour repositionner
   
 - Touche ``R`` : Mode Rotation
+  
   - Permet de faire pivoter le robot
   - Cliquez et faites tourner pour ajuster l'orientat
 - Objectif : Placer les panneaux dans le champ de vision optimal
 
-3. Visualisation de l'Image
+1. Visualisation de l'Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lancez la vue d'image :
@@ -63,6 +66,7 @@ Captures d'Images
 
 - Utilisez ``rqt_image_view`` pour capturer les images des panneaux
 - Techniques de capture :
+  
   * Faites une capture d'écran
   * Rogner l'image pour ne garder que le panneau
 
@@ -80,7 +84,7 @@ Conventions de Nommage :
 - ``stop.png``
 - ``tunnel.png``
 
-5. Calibration Intrinsèque
+1. Calibration Intrinsèque
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -141,6 +145,7 @@ Dépannage
 ---------
 
 - Problèmes de détection ?
+  
   * Vérifiez la qualité des images capturées
   * Assurez-vous que les panneaux sont bien éclairés
   * Repositionnez le robot si nécessaire

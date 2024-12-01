@@ -19,11 +19,15 @@ Prérequis
 Création d'un Workspace Catkin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Créez un workspace Catkin pour vos packages ROS :
+
 .. code-block:: bash
 
     mkdir -p ~/catkin_ws/src
     cd ~/catkin_ws/
     catkin_make
+
+Si vous avez suivi le tutoriel d'installation de ROS Noetic, vous avez déjà créé un workspace catkin_ws.
 
 Configuration du Workspace
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,6 +38,18 @@ Ajoutez la source du workspace à votre fichier ``.bashrc`` :
 
     echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     source ~/.bashrc
+
+Dans votre workspace, créez un dossier /scripts/ pour vos scripts Python :
+
+.. code-block:: bash
+
+    mkdir -p ~/catkin_ws/src/mon_package/scripts
+
+De même, créez un dossier /launch/ pour vos fichiers launch :
+
+.. code-block:: bash
+
+    mkdir -p ~/catkin_ws/src/mon_package/scripts
 
 Création de Packages ROS
 -----------------------
@@ -69,6 +85,7 @@ Avantages :
 - Extensions Python
 - Débogage intégré
 - Auto-complétion
+- Git-Hub Copilot
 
 Extensions VSCode recommandées :
 
@@ -79,6 +96,22 @@ Extensions VSCode recommandées :
 
 Configuration de CMakeLists.txt
 ------------------------------
+
+Le fichier `CMakeLists.txt` est un fichier de configuration utilisé par CMake pour définir comment un package ROS doit être construit. Il contient des instructions pour compiler le code source, lier les bibliothèques et installer les fichiers nécessaires. 
+
+Voici les sections principales d'un fichier `CMakeLists.txt` typique pour un package ROS :
+
+1. **Déclaration de la version minimale de CMake et du projet** :
+    - `cmake_minimum_required(VERSION 3.0.2)`
+    - `project(mon_package)`
+
+2. **Recherche des packages nécessaires** :
+    - `find_package(catkin REQUIRED COMPONENTS rospy std_msgs)`
+
+3. **Déclaration des scripts Python comme exécutables** :
+    - `catkin_install_python(PROGRAMS src/scripts/mon_script.py DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})`
+
+Ces instructions permettent à CMake de configurer correctement l'environnement de compilation pour votre package ROS.
 
 Structure de Base
 ~~~~~~~~~~~~~~~~
@@ -108,6 +141,8 @@ Notes Importantes
 
 Exemple de Code ROS : Publisher
 ------------------------------
+
+Ouvrez votre packages dans VSCode, et créez un fichier Python nommé ``publisher.py`` dans le dossier ``src/scripts/``.:
 
 Création d'un Publisher
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -218,6 +253,12 @@ Les fichiers launch sont des fichiers XML qui permettent de :
 - Configurer des paramètres globaux
 - Définir des arguments
 - Simplifier le lancement de systèmes complexes
+
+Une seule commande permet de lancer un fichier launch, qui démarrera tous les nœuds et paramètres du launch :
+
+.. code-block:: bash
+
+    roslaunch <nom_du_package> <nom_du_fichier>.launch
 
 Structure de Base d'un Fichier Launch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
