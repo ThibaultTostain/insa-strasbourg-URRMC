@@ -85,14 +85,13 @@ Fichier launch
 
 Ce fichier launch est utilisé pour configurer et lancer les différentes noeuds nécéssaires à la mission 1. Il inclut les étapes suivantes :
 
-- Lancer la calibration intrinsèque de la caméra, qui ajuste les paramètres internes de la caméra.
-- Lancer la calibration extrinsèque de la caméra, qui ajuste la position et l'orientation de la caméra par rapport au robot.
-- Définir les paramètres de calibration de la caméra, tels que les coordonnées de projection de l'image et les paramètres de compensation de l'image.
-- Lancer la détection de ligne, qui analyse les images de la caméra pour suivre la trajectoire.
-- Lancer le nœud maître, qui coordonne les différentes étapes de la mission.
-- Lancer le contrôle de lane, qui ajuste la vitesse et l'orientation du robot en fonction des informations de détection de ligne.
-- Lancer le nœud de détection du panneau STOP, qui envoie "0" sur /command pour stopper le robot lorsqu'il détecte le panneau STOP.
-- Lancer le nœud de détection du damier,  qui envoie "0" sur /command pour stopper le robot lorsqu'il détecte le damier.
+- Nœud de Calibration Intrinsèque et Extrinsèque de la Caméra : Ces inclusions lancent deux processus de calibration essentiels. La calibration intrinsèque ajuste les paramètres internes de la caméra pour corriger les distorsions optiques, tandis que la calibration extrinsèque définit précisément la position et l'orientation de la caméra par rapport au robot.
+- Paramètres de Calibration de la Caméra : Un groupe de paramètres configurant les coordonnées de projection de l'image (points supérieur et inférieur à top_x, top_y, bottom_x, bottom_y) et les paramètres de compensation (clip_hist_percent), permettant d'optimiser le traitement et l'analyse des images.
+- Nœud de Détection de Ligne (detect_lane.py) : Ce nœud analyse les images de la caméra pour détecter et suivre la trajectoire. Configurable en modes calibration ou action, il traite les images projetées et compensées, et génère des images de sortie pour les marqueurs de ligne blanche et jaune, assurant une détection précise de la trajectoire.
+- Nœud Maître (master_node.py) : Coordinateur central de la mission, ce nœud gère le démarrage, l'arrêt et la synchronisation des différentes étapes, orchestrant les actions du robot de manière cohérente et contrôlée.
+- Nœud de Contrôle de Trajectoire (control_lane.py) : Responsable de l'ajustement dynamique de la vitesse et de l'orientation du robot en se basant sur les informations de détection de ligne. Il assure que le robot suive précisément la trajectoire détectée.
+- Nœud d'Arrêt au Damier (stop_at_damier.py) : Ce nœud surveille spécifiquement la détection du damier. Lorsqu'un damier est identifié, il envoie la commande d'arrêt (0) sur le topic /command, immobilisant le robot à cette étape de la mission.
+- Nœud de Détection de Panneau Stop (detect_stop_sign.py) : Chargé de détecter les panneaux stop dans les flux d'images. Lorsqu'un panneau stop est identifié, il génère une commande d'arrêt, permettant au robot de s'immobiliser de manière sécurisée et précise.
 
 .. code-block:: bash
 
