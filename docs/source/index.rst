@@ -10,13 +10,6 @@ Ce site vous permettra de suivre, étape par étape, le travail réalisé par le
 - en passant par l’utilisation de l’environnement de simulation fourni par les organisateurs,  
 - jusqu’aux tests et à leur performance lors de la compétition.  
 
-Contents
---------
-
-
-Contents
---------
-
 .. toctree::
    :maxdepth: 2
    :caption: Table des matières
