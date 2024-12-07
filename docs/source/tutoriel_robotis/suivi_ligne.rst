@@ -57,7 +57,7 @@ Conseils :
 - Utilisez ces raccourcis pour un positionnement précis
 - Visez un alignement optimal avec les lignes de la piste
 
-1. Calibration Intrinsèque
+3. Calibration Intrinsèque
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -67,6 +67,8 @@ Conseils :
 4. Calibration Extrinsèque
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Dans un nouveau terminal : 
+
 .. code-block:: bash
 
     roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch
@@ -74,12 +76,16 @@ Conseils :
 5. Lancement de la Détection de Ligne
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Dans un nouveau terminal :
+
 .. code-block:: bash
 
     roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
 
 6. Lancer rqt
 ~~~~~~~~~~~~~
+
+Dans un nouveau terminal :
 
 .. code-block:: bash
 
@@ -94,11 +100,6 @@ Conseils :
   * Image de détection générale
   * Détection de ligne jaune
   * Détection de ligne blanche
-
-.. image:: pictures/install_terminator.png
-   :alt: Capture d'écran de Terminator
-   :width: 600
-   :align: center
 
 .. image:: pictures/noetic_detect_image_lane.png
    :alt: img lane
@@ -115,8 +116,10 @@ Conseils :
    :width: 600
    :align: center
 
-1. Reconfiguration
+8. Reconfiguration
 ~~~~~~~~~~~~~~~~~
+
+Dans un nouveau terminal :
 
 .. code-block:: bash
 
@@ -127,10 +130,11 @@ Conseils :
 
 Dans ``rqt_reconfigure``, sélectionnez ``detect_lane`` et ajustez les paramètres de filtrage des couleurs.
 
-.. image:: pictures/noetic_detect_reconfigure_lane.png
+.. image:: pictures/noetic_lane_reconfigure.png
    :alt: reconfigure lane
    :width: 600
    :align: center
+
 
 Conseils de Calibration des Couleurs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -157,12 +161,12 @@ Processus de Calibration HSV
    - Ajustez principalement la valeur haute
    - Visez une détection optimale
 
-4.  Enregistrement des Paramètres
+10.  Enregistrement des Paramètres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ouvrez ``lane.yaml`` dans ``turtlebot3_autorace_detect/param/lane/`` et enregistrez les nouvelles valeurs.
 
-.. image:: pictures/noetic_lane_lane.png
+.. image:: pictures/noetic_lane_yaml.png
    :alt: yaml lane
    :width: 600
    :align: center
@@ -170,7 +174,7 @@ Ouvrez ``lane.yaml`` dans ``turtlebot3_autorace_detect/param/lane/`` et enregist
 11. Finalisation
 ~~~~~~~~~~~~~~~
 
-- Fermez ``rqt_reconfigure`` et le nœud ``detect_lane``
+- Fermez ``rqt_reconfigure`` et le nœud ``detect_lane`` en faisant ``Ctrl+C`` dans les terminaux correspondants 
 - Relancez la détection :
 
 .. code-block:: bash

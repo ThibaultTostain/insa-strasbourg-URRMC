@@ -44,10 +44,11 @@ Pour cela, cliquez sur le robot dans Gazebo pour le sélectionner, puis utilisez
 - Touche ``R`` : Mode Rotation
   
   - Permet de faire pivoter le robot
-  - Cliquez et faites tourner pour ajuster l'orientat
+  - Cliquez et faites tourner pour ajuster l'orientation
+  
 - Objectif : Placer les panneaux dans le champ de vision optimal
 
-1. Visualisation de l'Image
+3. Visualisation de l'Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lancez la vue d'image :
@@ -84,7 +85,7 @@ Conventions de Nommage :
 - ``stop.png``
 - ``tunnel.png``
 
-1. Calibration Intrinsèque
+5. Calibration Intrinsèque
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -121,6 +122,11 @@ Remplacez ``SELECT_MISSION`` par la mission appropriée :
 Lancez à nouveau ``rqt_image_view``
 
 Sélectionnez le flux ``/detect/image_traffic_sign/compressed``
+
+.. image:: pictures/noetic_detect_intersection.png
+   :alt: detect intersection
+   :width: 600
+   :align: center
 
 Types de Missions
 ^^^^^^^^^^^^^^^

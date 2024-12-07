@@ -41,3 +41,5 @@ Ces raccourcis permettent de travailler plus efficacement avec plusieurs termina
    :alt: Capture d'écran de Terminator
    :width: 600
    :align: center
+
+Exemple d'utilisation de Terminator

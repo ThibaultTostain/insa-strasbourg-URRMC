@@ -32,6 +32,7 @@ La calibration intrinsèque vise à comprendre les caractéristiques internes de
 - Le point principal (centre optique)
 
 Objectifs principaux :
+
 - Corriger les déformations optiques
 - Compenser les aberrations géométriques
 - Établir une correspondance précise entre les pixels et les coordonnées réelles
@@ -52,6 +53,7 @@ La calibration extrinsèque détermine la position et l'orientation de la camér
 - Compenser les décalages physiques de montage
 
 Objectifs :
+
 - Garantir une perception correcte de l'environnement
 - Améliorer la précision de la navigation et du suivi de ligne
 - Compenser les imperfections de montage mécanique
@@ -85,6 +87,7 @@ Exécutez rqt dans un nouveau terminal :
    :width: 600
    :align: center
 
+
 6. Reconfiguration
 ~~~~~~~~~~~~~~~~~
 
@@ -105,6 +108,7 @@ Dans rqt_reconfigure, ajustez les paramètres suivants :
    :alt: Capture d'écran de Terminator
    :width: 600
    :align: center
+
 
 8. Enregistrement des Paramètres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

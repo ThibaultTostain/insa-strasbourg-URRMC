@@ -21,6 +21,7 @@ Création de la machine virtuelle
    :width: 600
    :align: center
 
+
 6. Créez un domaine d'utilisateur, Username et Password. 
 7. Définissez la taille de la mémoire vive (RAM) allouée à la machine virtuelle (minimum 4 Go recommandé).
 
@@ -29,6 +30,7 @@ Création de la machine virtuelle
    :width: 600
    :align: center
 
+
 8. Créez un nouveau disque dur virtuel avec une taille minimale de 25 Go.
 
 .. image:: pictures/4Espace_disque.png
@@ -36,16 +38,18 @@ Création de la machine virtuelle
    :width: 600
    :align: center
 
+
 9. Cliquez sur "Créer" pour finaliser la création de la machine virtuelle.
 
 Avant de lancer la machine virtuelle, vous devez configurer quelques paramètres supplémentaires :
-Selectionnez la machine virtuelle, appuyez sur configuration et allez dans l'onglet "Expert" en haut à gauche puis "Affichage" et activez, si votre ordinateur le permet, l'accélération graphique et la mémoire vidéo.
+Selectionnez la machine virtuelle, appuyez sur configuration et allez dans l'onglet "Expert" en haut à gauche puis "Affichage" et activez, si votre ordinateur le permet, l'accélération graphique et et augmentez la mémoire vidéo.
 Cela permet d'améliorer les performances graphiques de la machine virtuelle, ce qui sera particulèrement utile pour utiliser le logiciel de simulation Gazebo.
 
 .. image:: pictures/acc_graph.png
    :alt: acceleration graphique vm
    :width: 600
    :align: center
+
 
 Configuration de la machine virtuelle
 -------------------------------------
@@ -61,6 +65,7 @@ Configuration du clavier et de la résolution
    - Allez dans les paramètres système, dans la section "Langues et région".
    - Cliquez sur "Gérer les langues installées" et ajoutez le français comme langue.
    - Sélectionnez le français comme langue par défaut.
+   - 
 2. Modifiez la résolution de l'écran de la machine virtuelle pour qu'elle soit identique à votre écran hôte :
    
    - Dans les paramètres de la machine virtuelle, allez dans l'onglet "Écran".

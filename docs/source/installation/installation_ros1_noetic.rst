@@ -3,8 +3,8 @@ Installation de ROS1 Noetic
 
 Instructions pour installer **ROS1 Noetic** sur Linux.
 
-Ouvrir un terminal :
---------------------
+Mise à jour et téléchargement :
+-------------------------------
 
 Mettez à jour et mettez à niveau votre système avec les commandes suivantes :
 
