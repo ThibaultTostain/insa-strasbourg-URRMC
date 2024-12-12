@@ -10,7 +10,7 @@ Pour effectuer cela, nous aurons besoin du code de détection du damier et du co
 1 . Code de détection du damier 
 -----------------------------
 
-Le but principal de ce code est de configurer et exécuter un noeud ROS quoi détecte un motif de damier dans les images reçues de la caméra. Lorsque le damier est détecté, il attend 15 secondes avant d'envoyer une commande d'arrêt.
+Le but principal de ce code est de configurer et d'exécuter un noeud ROS quoi détecte un motif de damier dans les images reçues de la caméra. Lorsque le damier est détecté, il attend 15 secondes avant d'envoyer une commande d'arrêt.
 
 .. code-block:: bash
 
@@ -98,12 +98,12 @@ La première partie correspond aux différentes importations des modules/librair
 
 La fonction "init" permet : 
     - D'initialiser un noeud ROS nommé "stop_at_damier" 
-    - De s'abbonner au topic "/camera/image_projected/compressed" pour recevoir les images compressées
+    - De s'abonner au topic "/camera/image_projected/compressed" pour recevoir les images compressées
     - De publier sur le topic "/command" pour envoyé des commandes 
     - Charger l'image de référence avec self.reference_image
 
 La fonction "image_callback" : 
-    Elle est appelée chaque fois qu'une nouvelle image est reçue. Elle permet de traiter les image reçues, de les comparer avec l'image de référence du damier et si le damier est détecté, de publier une commande pour arrêter le robot après un délais de 15 secondes.
+    Elle est appelée chaque fois qu'une nouvelle image est reçue. Elle permet de traiter les images reçues, de les comparer avec l'image de référence du damier et si le damier est détecté, de publier une commande pour arrêter le robot après un délai de 15 secondes.
 
 La fonction "publish_command" :
     Elle permet de publier une commande avec la valeur spécifiée sur le topic "/command"
@@ -138,7 +138,7 @@ Les codes que nous utiliserons sont les .launch suivants :
 4 . Code "master_node"
 -----------------------------
 
-Le but principal de ce code est de définir un noeud nommé master_node qui permet de contrôler l'état d'un commande en utilisant la touche espace. 
+Le but principal de ce code est de définir un noeud nommé master_node qui permet de contrôler l'état d'une commande en utilisant la touche espace. 
 
 
 .. code-block:: bash
@@ -219,7 +219,7 @@ Le but principal de ce code est de définir un noeud nommé master_node qui perm
 Explication rapide du code : 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
-Dans ce code on retrouve la fonction 'init' qui permet d'initialiser le noeud et le publisher et subscriber permettant de publier ou écouter des messages sur le topic "/command". On a également une variable pour stocket l'état de la commande qui est à 0 si désactivé et 1 si activé.
+Dans ce code, on retrouve la fonction 'init' qui permet d'initialiser le noeud et le publisher et subscriber permettant de publier ou d'écouter des messages sur le topic "/command". On a également une variable pour stocker l'état de la commande qui est à 0 si désactivé et 1 si activé.
 
 Ensuite, la fonction 'command_callback' permet de mettre à jour l'état de la commande avec la valeur reçue sur le topic.
 
@@ -235,7 +235,7 @@ La fin du code permet l'exécution du main.
 5 . Fichier .launch
 -----------------------------
 
-Le fichier .launch en ROS est un fichier qui sert à démarrer et configurer plusieurs noeuds et paramètres de ROS en une seule commande. En clair, ce fichier va nous permettre ici de lancer l'ensemble des codes exposés précédemment qui sont nécessaires pour faire la mission suivi de ligne et arrêt au damier.
+Le fichier .launch en ROS est un fichier qui sert à démarrer et à configurer plusieurs noeuds et paramètres de ROS en une seule commande. En clair, ce fichier va nous permettre ici de lancer l'ensemble des codes exposés précédemment qui sont nécessaires pour faire la mission suivie de ligne et arrêt au damier.
 
 Ici, grâce à ce fichier, on lance en même temps les noeuds suivants : 
     - calibration intrinsèque de la caméra 
@@ -278,11 +278,11 @@ Ici, grâce à ce fichier, on lance en même temps les noeuds suivants :
 6. Etapes pour exécuter la mission
 ---------------------------------------------
 
-Tout d'abord, il faut commencer par configurer correctement la detection des lignes par la caméra.
+Tout d'abord, il faut commencer par configurer correctement la détection des lignes par la caméra.
 
 Pour cela, il faut que vous suiviez les étapes décrites dans la partie Tutoriel Robotis/Detection de ligne Gazebo du site.
 
-Une fois cette étape réalisé, ouvrez un nouveau terminal et utilisez la commande suivante : 
+Une fois cette étape réalisée, ouvrez un nouveau terminal et utilisez la commande suivante : 
 
 .. code-block:: bash
 
