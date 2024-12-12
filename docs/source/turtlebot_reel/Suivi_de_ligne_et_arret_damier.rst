@@ -282,7 +282,7 @@ Pour exécuter la mission, vous devez écrire la commande suivante :
 
 .. code-block:: bash
 
-    roslaunch tournoi mission1.launch
+    roslaunch competition mission1.launch
 
 
 
