@@ -275,14 +275,20 @@ Ici, grâce à ce fichier, on lance en même temps les noeuds suivants :
       
     </launch>
 
-6. Exécution de cette mission via le terminal 
+6. Etapes pour exécuter la mission
 ---------------------------------------------
 
-Pour exécuter la mission, vous devez écrire la commande suivante : 
+Tout d'abord, il faut commencer par configurer correctement la detection des lignes par la caméra.
+
+Pour cela, il faut que vous suiviez les étapes décrites dans la partie Tutoriel Robotis/Detection de ligne Gazebo du site.
+
+Une fois cette étape réalisé, ouvrez un nouveau terminal et utilisez la commande suivante : 
 
 .. code-block:: bash
+     $  roslaunch competition mission1.launch
 
-    roslaunch competition mission1.launch
+Et dans un autre terminal utilisé la commande : 
 
-
+.. code-block:: bash
+     $ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
