@@ -50,5 +50,15 @@ Finalement, dans un dernier terminal, entrez la commande permettant d'éxécuter
 
    rosrun competition mission_parking.py
 
-Problèmes rencontrés:
+Piste d'amélioration :
 ---------------------------------------------
+
+Ce code a été réalisé le deuxième jour de compétition, quelques minutes avant le passage. Il nécessite ainsi des améliorations, auxquelle nous avons pris la peine de réfléchir.
+
+- Parfois, certaines mesures du Lidar sont défaillantes, ce qui ne permet pas de mesurer la distance souhaitée étant donné que le noeud qui envoi les données n'intègre pas de pré filtrage dans celui-ci. Ainsi, on peut envisager lors de la mesure ponctuelle de distance, appliquer un filtrage en exigeant une valeur ni nulle ni infinie (égale à 'inf').
+
+- On peut aussi envisager prendre en compte un plus large éventail de mesures comme par exemple celle des distances entre -5° et +5°, et conserver la plus petite distance mesurée comme celle étant la distance de l'obstacle devant.
+
+- Il serait également pertinent de profiter du lidar réalisant un scan à 360 degrès. Il n'est donc pas nécessaire de tourner le TurtleBot afin de vérifier si l'emplacement est occupé.
+
+- Enfin, à terme, il est souhaitable d'intégrer le code de détection de panneau (défaillant durant la compétition) et celui de suivi de ligne au fonctionnement deu code de parking.
