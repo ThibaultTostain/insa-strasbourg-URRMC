@@ -126,7 +126,16 @@ Ces codes permettent d'exécuter les codes Python suivants :
     - turtlebot3_autorace_detect/nodes/detect_lane
     - turtlebot3_autorace_driving/nodes/control_lane
 
-3 . Code "master_node"
+3 . Codes de calibration des caméras intrinsèques et extrinsèques 
+---------------------------------------------------------------------
+
+On utilise ici encore les codes du tutoriel ROBOTIS, que l'on retrouve sur le github au lien suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main . 
+
+Les codes que nous utiliserons sont les .launch suivants : 
+    - turtlebot3_autorace_camera/launch/intrinsic_camera_calibration.launch
+    - turtlebot3_autorace_camera/launch/extrinsic_camera_calibration.launch
+
+4 . Code "master_node"
 -----------------------------
 
 Le but principal de ce code est de définir un noeud nommé master_node qui permet de contrôler l'état d'un commande en utilisant la touche espace. 
@@ -223,7 +232,7 @@ Finalement la fonction 'main' initialise le noeud, crée une instance de MasterN
 La fin du code permet l'exécution du main.
 
 
-4 . Fichier .launch
+5 . Fichier .launch
 -----------------------------
 
 Le fichier .launch en ROS est un fichier qui sert à démarrer et configurer plusieurs noeuds et paramètres de ROS en une seule commande. En clair, ce fichier va nous permettre ici de lancer l'ensemble des codes exposés précédemment qui sont nécessaires pour faire la mission suivi de ligne et arrêt au damier.
@@ -265,6 +274,11 @@ Ici, grâce à ce fichier, on lance en même temps les noeuds suivants :
         <include file='$(find turtlebot3_autorace_driving)/launch/turtlebot3_autorace_control_lane.launch' />
       
     </launch>
+
+6. Exécution de cette mission via le terminal 
+---------------------------------------------
+
+Pour exécuter 
 
 
 
