@@ -4,7 +4,8 @@ Cette partie correspond au code permettant de réaliser la première partie de l
 ----------------------------------------------------------------------------------------------
 Le robot doit être capable de suivre la ligne sur une certaine distance et de s'arrêter uniquement lorsqu'il rencontre un damier. 
 
-Pour effectuer cela, nous aurons besoin du code de détection du damier et du code de suivi de ligne. A l'aide d'un fichier .launch, nous pourrons exécuter les deux codes ensembles. Enfin, nous utiliserons également un fichier master_node qui permet de
+Pour effectuer cela, nous aurons besoin du code de détection du damier et du code de suivi de ligne. A l'aide d'un fichier .launch, nous pourrons exécuter les deux codes ensembles. Enfin, nous utiliserons également un fichier master_node qui permet de contrôler l'état d'une commande (activer ou désactiver) en utilisant la touche espace.
+
 
 1 . Code de détection du damier 
 -----------------------------
@@ -111,4 +112,17 @@ La fonction "run":
     Correspond à la boucle principale qui maintient le noeud en vie et vérifie si ROS doit s'arrêter.
 
 Enfin, la dernière partie du code permet le lancement du noeud.
+
+2 . Code du suivi de ligne  
+-----------------------------
+
+Concernant le code de suivi de ligne, on utilise celui du tutoriel ROBOTIS, que l'on retrouve sur le github au lien suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main . 
+
+Les codes que nous utiliserons sont les .launch suivants : 
+    - turtlebot3_autorace_detect/launch/detect_lane.launch
+    - turtlebot3_autorace_driving/launch/turtlebot3_autorace_control_lane.launch
+
+Ces codes permettent d'exécuter les codes Python suivants : 
+    - turtlebot3_autorace_detect/nodes/detect_lane
+    - turtlebot3_autorace_driving/nodes/control_lane
 
