@@ -1,4 +1,4 @@
-Suivi de ligne et arrêt au damier 
+Mission 1 : Suivi de ligne et arrêt au damier 
 ===============================================
 Cette partie correspond au code permettant de réaliser la première partie de la qualification.
 ----------------------------------------------------------------------------------------------
