@@ -17,14 +17,15 @@ Nous considérons que la caméra choisie est un caméra de type FishEye compatib
 
 
 Prérequis
-~~~~~~~~~
+---------
+
 Installation des paquets et calibration de la caméra
-====================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Les instructions suivantes décrivent comment installer les paquets et calibrer une caméra.
 
 Installation du paquet AutoRace sur le PC distant et le SBC
-----------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Clonez et compilez le dépôt AutoRace :
 
@@ -35,7 +36,7 @@ Clonez et compilez le dépôt AutoRace :
    $ cd ~/catkin_ws && catkin_make
 
 Installation des paquets dépendants supplémentaires sur le SBC
---------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Créez un fichier de swap pour éviter un manque de mémoire lors de la compilation d'OpenCV :
 
@@ -60,7 +61,7 @@ Installez les dépendances nécessaires :
        protobuf-compiler
 
 Compilation d'OpenCV et opencv_contrib
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Téléchargez et extrayez les archives OpenCV :
 
@@ -116,10 +117,10 @@ La compilation peut prendre une à deux heures :
    $ make clean
    $ sudo apt-get update
 
-Configuration du Raspberry Pi
------------------------------
+Configuration de la Raspberry Pi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Éteignez le Raspberry Pi, retirez la carte microSD et modifiez le fichier config.txt dans la section system-boot. Ajoutez :
+Éteignez la Raspberry Pi, retirez la carte microSD et modifiez le fichier config.txt dans la section system-boot. Ajoutez :
 
 .. code-block::
 
@@ -139,7 +140,8 @@ Installez FFmpeg et testez la capture vidéo :
    $ ffmpeg -f video4linux2 -s 640x480 -i /dev/video0 -ss 0:0:2 -frames 1 capture_test.jpg
 
 Installation de paquets ROS supplémentaires
--------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 Sur le SBC :
 
@@ -159,7 +161,7 @@ Sur le PC distant :
 
 
 Calibration de la caméra
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 
 
