@@ -13,10 +13,18 @@ Pour cette mission, nous avons réalisé notre propre code après avoir tenté d
 
 Nous avons donc exécuté la mission avec les codes du tutoriel ROBOTIS de la manière suivante : 
 
-1 . Code de détection du damier 
+1 . Fonctionnement du code
 -----------------------------
 
-Le but principal de ce code est de configurer et d'exécuter un noeud ROS quoi détecte un motif de damier dans les images reçues de la caméra. Lorsque le damier est détecté, il attend 15 secondes avant d'envoyer une commande d'arrêt.
+Le but principal de ce code est de se garer à la première place non occupée du parking. Pour se faire, il se place devant la première place et mesure avec son lidar, si un TurtleBot (ou autre objet) s'y trouve, si oui, il se gare à la seconde place, sinon sur la première.
+
+Une fois garé, le TurtleBot marque une pause de 5 secondes avant de se rediriger vers l'entrée du parking.
+
+
+Note : Cette version du code ne réalise pas la détection du panneau à l'entrée et nécessite ainsi de placer le TrtuelBot du parking avant de lancer la mission.
+
+2 . Code du parking
+-----------------------------
 
 .. code-block:: bash
 
@@ -196,8 +204,6 @@ Le but principal de ce code est de configurer et d'exécuter un noeud ROS quoi d
        except rospy.ROSInterruptException:
            pass
 
-2 . Fonctionnement du code
------------------------------
 
 3. Étapes pour exécuter la mission
 ---------------------------------------------
