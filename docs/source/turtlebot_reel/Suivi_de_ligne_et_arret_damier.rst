@@ -278,7 +278,11 @@ Ici, grâce à ce fichier, on lance en même temps les noeuds suivants :
 6. Exécution de cette mission via le terminal 
 ---------------------------------------------
 
-Pour exécuter 
+Pour exécuter la mission, vous devez écrire la commande suivante : 
+
+.. code-block:: bash
+
+    roslaunch tournoi mission1.launch
 
 
 
