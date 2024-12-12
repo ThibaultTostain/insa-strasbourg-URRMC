@@ -1,4 +1,4 @@
-Détection d'obstacle 
+Mission 2 : Détection d'obstacle 
 ===============================================
 Cette partie correspond au code permettant de réaliser l'évitement d'obstacle.
 ----------------------------------------------------------------------------------------------
