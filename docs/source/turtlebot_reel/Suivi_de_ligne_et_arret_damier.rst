@@ -285,10 +285,12 @@ Pour cela, il faut que vous suiviez les étapes décrites dans la partie Tutorie
 Une fois cette étape réalisé, ouvrez un nouveau terminal et utilisez la commande suivante : 
 
 .. code-block:: bash
-     roslaunch competition mission1.launch
+
+    roslaunch competition mission1.launch
 
 Et dans un autre terminal utilisez la commande : 
 
 .. code-block:: bash
-     roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+    roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
