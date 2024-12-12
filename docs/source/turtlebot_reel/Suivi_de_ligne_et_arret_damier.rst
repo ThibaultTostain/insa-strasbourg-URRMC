@@ -126,3 +126,145 @@ Ces codes permettent d'exécuter les codes Python suivants :
     - turtlebot3_autorace_detect/nodes/detect_lane
     - turtlebot3_autorace_driving/nodes/control_lane
 
+3 . Code "master_node"
+-----------------------------
+
+Le but principal de ce code est de définir un noeud nommé master_node qui permet de contrôler l'état d'un commande en utilisant la touche espace. 
+
+
+.. code-block:: bash
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*-
+    # Author: PALISSE Volia, WAECHTER Thibaut, YOUBI Lounès, OLIVEIRA Théo
+    
+    import rospy
+    from std_msgs.msg import UInt8
+    import sys
+    import select
+    import termios
+    import tty
+    import signal
+    
+    class MasterNode:
+        def __init__(self):
+            # Initialisation du publisher et subscriber
+            self.pub_command = rospy.Publisher('/command', UInt8, queue_size=1)
+            self.sub_command = rospy.Subscriber('/command', UInt8, self.command_callback, queue_size=1)
+            self.command_state = 0  # 0 = désactivé, 1 = activé
+            self.settings = termios.tcgetattr(sys.stdin)
+            print("\n\r")
+            rospy.loginfo(f"État initial de la commande: {self.command_state}\n")
+    
+        def command_callback(self, command_msg):
+            self.command_state = command_msg.data
+            print("\n\r")
+            rospy.loginfo(f"Nouvelle valeur de commande reçue: {self.command_state}\n")
+    
+        def get_key(self):
+            try:
+                tty.setraw(sys.stdin.fileno())
+                rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+                if rlist:
+                    key = sys.stdin.read(1)
+                else:
+                    key = ''
+            finally:
+                termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
+            return key
+    
+        def run(self):
+            rospy.loginfo("Appuyez sur ESPACE pour alterner l'état du topic /command entre 0 et 1\n")
+            
+            while not rospy.is_shutdown():
+                key = self.get_key()
+                
+                if key == ' ':
+                    self.command_state = 1 if self.command_state == 0 else 0
+                    print("\n\r")
+                    rospy.loginfo(f"Command: {self.command_state}\n")
+                    self.pub_command.publish(self.command_state)
+                elif key == '\x03':  # touche Ctrl+C
+                    print("\n\r")
+                    rospy.loginfo("Arrêt du robot.\n")
+                    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
+                    print("\n\r")
+                    rospy.signal_shutdown("Arrêt demandé par l'utilisateur\n")
+                    break
+    
+    def main():
+        rospy.init_node('master_node')
+        
+        try:
+            node = MasterNode()
+            node.run()
+        except rospy.ROSInterruptException:
+            termios.tcsetattr(sys.stdin, termios.TCSADRAIN, node.settings)
+        except Exception as e:
+            print("\r")
+            rospy.logerr(f"\rErreur: {str(e)}\n")
+            termios.tcsetattr(sys.stdin, termios.TCSADRAIN, termios.tcgetattr(sys.stdin.fileno()))
+    
+    if __name__ == '__main__':
+        main()
+
+Explication rapide du code : 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+Dans ce code on retrouve la fonction 'init' qui permet d'initialiser le noeud et le publisher et subscriber permettant de publier ou écouter des messages sur le topic "/command". On a également une variable pour stocket l'état de la commande qui est à 0 si désactivé et 1 si activé.
+
+Ensuite, la fonction 'command_callback' permet de mettre à jour l'état de la commande avec la valeur reçue sur le topic.
+
+La fonction 'get_key' a pour but de gérer les entrées du clavier. 
+
+Enfin, la fonction 'run' permet d'écouter les entrées clavier et de publier les commandes en conséquences.
+
+Finalement la fonction 'main' initialise le noeud, crée une instance de MasterNode et appelle la méthode 'run'.
+
+La fin du code permet l'exécution du main.
+
+
+4 . Fichier .launch
+-----------------------------
+
+Le fichier .launch en ROS est un fichier qui sert à démarrer et configurer plusieurs noeuds et paramètres de ROS en une seule commande. En clair, ce fichier va nous permettre ici de lancer l'ensemble des codes exposés précédemment qui sont nécessaires pour faire la mission suivi de ligne et arrêt au damier.
+
+Ici, grâce à ce fichier, on lance en même temps les noeuds suivants : 
+    - calibration intrinsèque de la caméra 
+    - Calibration extrinsèque de la caméra
+    - Lane detection
+    - Master Node
+    - Stop at damier
+    - Control Lane
+
+.. code-block:: bash
+    
+    <launch>
+        <arg name="mode" default="action"/>
+        
+        <!-- Lancer la calibration intrinsèque de la caméra -->
+        <include file='$(find turtlebot3_autorace_camera)/launch/intrinsic_camera_calibration.launch' />
+    
+        <!-- Lancer la calibration extrinsèque de la caméra -->
+        <include file='$(find turtlebot3_autorace_camera)/launch/extrinsic_camera_calibration.launch' />
+    
+        <!-- Lancement du lane detection -->
+        <include file='$(find turtlebot3_autorace_detect)/launch/detect_lane.launch' />
+    
+        <!-- Lancement du Master node avec gestion de l'arrêt -->
+        <node pkg="competition" name="master_node" type="master_node.py" output="screen" required="false" respawn="false">
+        </node>
+        
+        <!-- Lancement du noeud pour l'arret sur le damier-->
+        <node pkg="competition" type="stop_at_damier.py" name="stop_at_damier" output="screen">
+            <remap from="/camera/image_raw" to="/camera/image_raw" />
+            <remap from="/cmd_vel" to="/cmd_vel" />
+            <remap from="/command" to="/command" />
+        </node>
+        
+        <!-- Lancement du lane control -->
+        <include file='$(find turtlebot3_autorace_driving)/launch/turtlebot3_autorace_control_lane.launch' />
+      
+    </launch>
+
+
+
