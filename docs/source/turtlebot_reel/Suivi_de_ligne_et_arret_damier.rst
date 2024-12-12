@@ -91,3 +91,24 @@ Le but principal de ce code est de configurer et exécuter un noeud ROS quoi dé
         except rospy.ROSInterruptException:
             pass
 
+Explication rapide du code : 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+La première partie correspond aux différentes importations des modules/librairies nécessaires pour la suite du code. 
+
+La fonction "init" permet : 
+    - D'initialiser un noeud ROS nommé "stop_at_damier" 
+    - De s'abbonner au topic "/camera/image_projected/compressed" pour recevoir les images compressées
+    - De publier sur le topic "/command" pour envoyé des commandes 
+    - Charger l'image de référence avec self.reference_image
+
+La fonction "image_callback" : 
+    Elle est appelée chaque fois qu'une nouvelle image est reçue. Elle permet de traiter les image reçues, de les comparer avec l'image de référence du damier et si le damier est détecté, de publier une commande pour arrêter le robot après un délais de 15 secondes.
+
+La fonction "publish_command" :
+    Elle permet de publier une commande avec la valeur spécifiée sur le topic "/command"
+
+La fonction "run":
+    Correspond à la boucle principale qui maintient le noeud en vie et vérifie si ROS doit s'arrêter.
+
+Enfin, la dernière partie du code permet le lancement du noeud.
+
