@@ -4,7 +4,7 @@ Cette partie correspond au code permettant de réaliser l'évitement d'obstacle.
 ----------------------------------------------------------------------------------------------
 Dans cette mission, le TurtleBot doit naviguer sur un chemin délimité par des lignes blanche et jaune, tout en évitant des obstacles placés aléatoirement et en s’arrêtant devant une barrière fermant la route.
 
-.. image:: pictures/consigne_mission2.png
+.. image:: consigne_mission2.png
    :alt: node_graph mission1
    :width: 600
    :align: center
