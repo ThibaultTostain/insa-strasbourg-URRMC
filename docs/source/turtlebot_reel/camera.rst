@@ -1,2 +1,2 @@
-Installation des cameras
+Installation des caméras
 ========================
