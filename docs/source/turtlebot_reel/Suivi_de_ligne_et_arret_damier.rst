@@ -1,6 +1,6 @@
 Suivi de ligne et arrêt au damier 
 ===============================================
-Cette partie correspond au code permettant de réalisé la première partie de la qualification.
+Cette partie correspond au code permettant de réaliser la première partie de la qualification.
 ----------------------------------------------------------------------------------------------
 Le robot doit être capable de suivre la ligne sur une certaine distance et de s'arrêter uniquement lorsqu'il rencontre un damier. 
 
