@@ -282,15 +282,39 @@ Tout d'abord, il faut commencer par configurer correctement la détection des li
 
 Pour cela, il faut que vous suiviez les étapes décrites dans la partie Tutoriel Robotis/Detection de ligne Gazebo du site.
 
-Une fois cette étape réalisée, ouvrez un nouveau terminal et utilisez la commande suivante : 
+Une fois cette étape réalisée, il faut commencer en démarrant ROS grâce à cette commande à éxécuter sur l'ordinateur : 
+
+.. code-block:: bash
+
+    roscore
+
+Dans un second temps, ouvrez un terminal sur la RaspeberryPi (via SSH) du TurtleBot pour utiliser la commande suivante qui permet de lancer les configurations spécifiques pour le démarrage du robot TurtlBot3 : 
+
+.. code-block:: bash
+
+    roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+Puis dans un second terminal sur le robot ouvert via SSH, lancez le noeud de publication des images de la caméra par la RaspberryPi embarquée dans le TurtleBot :
+
+.. code-block:: bash
+
+   roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+
+Ensuite, ouvrez un nouveau terminal, sur le navigateur cette fois-ci, pour lancer le noeud de calibration de la caméra intrinsèque puis celui de la calibration extrinsèque :
+
+.. code-block:: bash
+
+   roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch
+
+.. code-block:: bash
+
+   roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch
+
+Dans un nouveau terminal sur l'ordinateur, utilisez la commande correspondant au noeud de la mission 1 :
 
 .. code-block:: bash
 
     roslaunch competition mission1.launch
 
-Et dans un autre terminal utilisez la commande : 
 
-.. code-block:: bash
-
-    roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
