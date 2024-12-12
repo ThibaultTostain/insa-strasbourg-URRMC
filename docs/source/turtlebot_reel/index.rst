@@ -9,3 +9,4 @@ Guide d'installation des turtlebot3.
 
    camera
    lidar
+   suivie de ligne et arrêt au damier
