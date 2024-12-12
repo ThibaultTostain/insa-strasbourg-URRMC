@@ -1,7 +1,8 @@
 Mission 2 : Détection d'obstacle 
 ===============================================
+
 Cette partie correspond au code permettant de réaliser l'évitement d'obstacle.
-----------------------------------------------------------------------------------------------
+
 Dans cette mission, le TurtleBot doit naviguer sur un chemin délimité par des lignes blanche et jaune, tout en évitant des obstacles placés aléatoirement et en s’arrêtant devant une barrière fermant la route.
 
 .. image:: consigne_mission2.png
