@@ -10,55 +10,11 @@ Dans cette mission, le TurtleBot doit naviguer sur un chemin délimité par des 
    :align: center
 
 
-Pour cette mission, nous avons utiliser les codes du tutoriel ROBOTIS que vous pouvez retrouver dans le github suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main
+Pour cette mission, nous avons utilisé les codes du tutoriel ROBOTIS que vous pouvez retrouver dans le github suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main
 
-1 . Code de détection du damier 
------------------------------
+Nous avons donc exécuté la mission avec les codes du tutoriel ROBOTIS de la manière suivante : 
 
-
-
-Explication rapide du code : 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-2 . Code du suivi de ligne  
------------------------------
-
-
-
-3 . Codes de calibration des caméras intrinsèques et extrinsèques 
----------------------------------------------------------------------
-
-
-
-4 . Code "master_node"
------------------------------
-
-
-
-
-.. code-block:: bash
-  
-
-Explication rapide du code : 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-
-
-
-5 . Fichier .launch
------------------------------
-
-Le fichier .launch en ROS est un fichier qui sert à démarrer et configurer plusieurs noeuds et paramètres de ROS en une seule commande.
-
-Ici, ce fichier démarre le noeud spécifique 'core_node_mission' du package turtlebot3_autorace_core. 
-
-.. code-block:: bash
-    
-    <launch>
-         <node pkg="turtlebot3_autorace_core" type="core_node_mission" name="core_node_mission"                 output="screen" />
-    </launch>
-
-6. Etapes pour exécuter la mission
+Etapes pour exécuter la mission
 ---------------------------------------------
 
 Dans un premier temps, ouvrez un terminal pour utiliser la commande suivante qui permet de lancer les configurations spécifiques pour le démarrage du robot TurtlBot3 : 
@@ -84,3 +40,8 @@ Finalement, dans un dernier terminal, entrez la commande permettant d'éxécuter
 .. code-block:: bash
 
    rostopic pub -1 /core/decided_mode std_msgs/UInt8 "data: 2"
+
+Problèmes rencontrés:
+---------------------------------------------
+Malheureusement, cette mission, qui fonctionnait en simulation, n'a pas été un succès avec le vrai robot. En effet, le robot ne réussissait pas à détecter correctement les obstacles et se retrouvait à foncer dedans. 
+Nous avons tenté de modifier un peu le code à plusieurs reprises, mais aucune tentative n'a fonctionné correctement.
