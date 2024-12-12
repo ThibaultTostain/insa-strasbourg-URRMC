@@ -9,8 +9,7 @@ Dans cette mission, le TurtleBot doit naviguer sur un chemin délimité par des 
    :width: 600
    :align: center
 
-
-Pour cette mission, nous avons réalisé notre propre code après avoir tenté d'utiliser, sans grand succès, les codes du tutoriel ROBOTIS que vous pouvez retrouver dans le github suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main 
+Pour cette mission, nous avons utilisé les codes du tutoriel ROBOTIS que vous pouvez retrouver dans le github suivant : https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020/tree/main
 
 Nous avons donc exécuté la mission avec les codes du tutoriel ROBOTIS de la manière suivante : 
 
