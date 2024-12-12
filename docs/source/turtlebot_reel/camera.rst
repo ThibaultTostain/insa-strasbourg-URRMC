@@ -4,6 +4,8 @@ Installation des caméras
 Cette partie explique comment mettre en place la caméra : la partie hardware et la partie software.
 ---------------------------------------------------------------------------------------------------
 
+HARDWARE
+
 Nous considérons que la caméra choisie est un caméra de type FishEye compatible avec RaspberryPi.
 
 1. Connecter la caméra FishEye à l'emplacement correspondant sur la RaspberryPi.
@@ -15,6 +17,7 @@ Nous considérons que la caméra choisie est un caméra de type FishEye compatib
 - Pièce 3D pour le support de la caméra fournie par les organisateurs de la compétition URRMC :
   Téléchargez le fichier via `ce lien <https://file.io/srEicsKNcDTi>`_.
 
+SOFTWARE
 
 Prérequis
 ---------
