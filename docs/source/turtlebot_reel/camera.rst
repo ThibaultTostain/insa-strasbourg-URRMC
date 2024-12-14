@@ -16,22 +16,22 @@ Nous considérons que la caméra choisie est un caméra de type FishEye compatib
 
 .. image:: support_camera_tostain.png
    :alt: node_graph mission1
-   :width: 600
+   :width: 200
    :align: center
 
 - Pièce 3D pour le support de la caméra fournie par les organisateurs de la compétition URRMC :
   Téléchargez le fichier via `ce lien <https://file.io/srEicsKNcDTi>`_.
 
-.. image:: support_cam_image.png
-   :alt: node_graph mission1
-   :width: 600
+.. list-table:: 
+   :widths: 50 50
    :align: center
 
-.. image:: angle_cam_images.png
-   :alt: node_graph mission1
-   :width: 600
-   :align: center
-
+   * - .. image:: support_cam_image.png
+         :alt: node_graph mission1
+         :width: 200
+     - .. image:: angle_cam_images.png
+         :alt: node_graph mission1
+         :width: 200
 
 SOFTWARE
 
