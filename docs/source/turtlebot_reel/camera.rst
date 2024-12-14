@@ -181,6 +181,10 @@ Calibration de la caméra
    .. code-block:: bash
       $ rqt_image_view
 
+.. image:: noetic_rpi_rqt_image_view.png
+   :alt: node_graph mission1
+   :width: 600
+   :align: center
 
 
 
