@@ -1,8 +1,7 @@
 Installation des caméras
 ========================
 
-Cette partie explique comment mettre en place la caméra : la partie hardware et la partie software.
----------------------------------------------------------------------------------------------------
+**Cette partie explique comment mettre en place la caméra : la partie hardware et la partie software.**
 
 HARDWARE
 
