@@ -14,8 +14,24 @@ Nous considérons que la caméra choisie est un caméra de type FishEye compatib
 - Pièce 3D custom : 
   Téléchargez ce fichier via `ce lien <https://file.io/YCmzrXh2jZ27>`_.
 
+.. image:: support_camera_tostain.png
+   :alt: node_graph mission1
+   :width: 600
+   :align: center
+
 - Pièce 3D pour le support de la caméra fournie par les organisateurs de la compétition URRMC :
   Téléchargez le fichier via `ce lien <https://file.io/srEicsKNcDTi>`_.
+
+.. image:: support_cam_image.png
+   :alt: node_graph mission1
+   :width: 600
+   :align: center
+
+.. image:: angle_cam_images.png
+   :alt: node_graph mission1
+   :width: 600
+   :align: center
+
 
 SOFTWARE
 
