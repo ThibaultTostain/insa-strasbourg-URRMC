@@ -248,6 +248,8 @@ Pour des informations détaillées sur la calibration de la caméra, consultez l
    :width: 300
    :align: center
 
+Pour réaliser cette étape, il faut déplacer le robot (dont la caméra est face au damier) de manière horizontale, verticale, vers le haut et vers le bas. Ces déplacements valideront petit à petit les paramètres 'X', 'Y', 'Size' et 'Skew', jusqu'à pouvoir alors cliquer sur CALIBRER (bouton grisé au départ).
+
 5. Cliquez sur **SAVE** pour enregistrer les données de calibration intrinsèque.
 
 .. image:: interface_calib_camera2.png
