@@ -170,17 +170,20 @@ Calibration de la caméra
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Lancer `roscore` sur le PC distant
-   .. code-block:: bash
+  
+.. code-block:: bash
 
       $ roscore
 
 2. Activer la caméra sur le SBC (Single Board Computer)
-   .. code-block:: bash
+   
+.. code-block:: bash
 
       $ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 
 3. Exécuter `rqt_image_view` sur le PC distant
-   .. code-block:: bash
+   
+.. code-block:: bash
 
       $ rqt_image_view
 
