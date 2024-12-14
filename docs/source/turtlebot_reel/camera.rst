@@ -208,5 +208,144 @@ Calibration de la caméra
    :width: 600
    :align: center
 
+Calibration de la caméra intrinsèque
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Imprimer un échiquier sur papier format A4. L'échiquier est utilisé pour la calibration intrinsèque de la caméra.
 
+L'échiquier est stocké à l'emplacement suivant : `turtlebot3_autorace_camera/data/checkerboard_for_calibration.pdf`
+
+Modifiez la valeur des paramètres dans le fichier suivant : `turtlebot3_autorace_camera/launch/intrinsic_camera_calibration.launch`
+
+Pour des informations détaillées sur la calibration de la caméra, consultez le manuel de Calibration de la caméra sur le Wiki ROS.
+
+.. image:: damiers.png
+   :alt: node_graph mission1
+   :width: 100
+   :align: center
+
+1. Lancer 'roscore' sur le PC distant :
+
+.. code-block:: bash
+
+      $ roscore
+
+2. Activer la caméra sur le SBC (Single Board Computer) :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+
+3. Exécuter le fichier de lancement de la calibration intrinsèque de la caméra sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=calibration
+
+4. Utilisez l'échiquier pour calibrer la caméra et cliquez sur **CALIBRER**.
+
+.. image:: interface_calib_camera.png
+   :alt: node_graph mission1
+   :width: 300
+   :align: center
+
+5. Cliquez sur **SAVE** pour enregistrer les données de calibration intrinsèque.
+
+.. image:: interface_calib_camera2.png
+   :alt: node_graph mission1
+   :width: 300
+   :align: center
+
+6. Un dossier 'calibrationdata.tar.gz' sera créé dans le dossier '/tmp'.
+
+.. image:: calibration_data_tar_gz.png
+   :alt: node_graph mission1
+   :width: 100
+   :align: center
+
+7. Extraire le fichier 'calibrationdata.tar.gz'' et ouvrez le fichier 'ost.yaml'.
+
+.. image:: yaml_file.png
+   :alt: node_graph mission1
+   :width: 80
+   :align: center
+
+.. image:: ost_yaml.png
+   :alt: node_graph mission1
+   :width: 450
+   :align: center
+
+8. Copier et coller les données de 'ost.yaml' vers 'camerav2_320x240_30fps.yaml'.
+
+.. image:: camerav2_yaml.png
+   :alt: node_graph mission1
+   :width: 80
+   :align: center
+
+.. image:: camerav2_320x240.png
+   :alt: node_graph mission1
+   :width: 450
+   :align: center
+
+Calibration de la caméra extrinsèque
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Lancer `roscore` sur le PC distant :
+  
+.. code-block:: bash
+
+      $ roscore
+
+2. Activer la caméra sur le SBC (Single Board Computer) :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+
+3. Utiliser la commande sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=action
+
+4. Lancer le fichier de calibration extrinsèque de la caméra sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
+
+5. Exécuter `rqt` sur le PC distant :
+   
+.. code-block:: bash
+
+      $ rqt
+
+6. Cliquez sur `Plugins > Visualization > Image view` ; plusieurs fenêtres seront ouvertes.
+
+7. Sélectionner les sujets `/camera/image_extrinsic_calib/compressed` et `/camera/image_projected_compensated` sur chaque moniteur.  
+   L'une des deux fenêtres affichera une image avec un rectangle rouge. L'autre affichera la vue projetée au sol (vue de dessus).
+
+8. Vérification des sujets
+   - `/camera/image_extrinsic_calib/compressed`
+   - `/camera/image_projected_compensated`
+
+9. Exécuter `rqt_reconfigure` sur le PC distant :
+   
+.. code-block:: bash
+
+      $ rosrun rqt_reconfigure rqt_reconfigure
+
+10. Ajuster les paramètres dans `/camera/image_projection` et `/camera/image_compensation_projection`.
+    - Modifier la valeur du paramètre `/camera/image_projection` affecte le sujet `/camera/image_extrinsic_calib/compressed`.
+    - La calibration intrinsèque de la caméra transformera l'image entourée par le rectangle rouge et affichera l'image comme vue du dessus de la voie.
+
+11. Exemple d'interface `rqt_reconfigure` :
+
+    Voici l'exemple d'interface lorsque vous exécutez `rqt_reconfigure`.
+
+    .. image:: rqt_reconfigure_image.png
+       :alt: Interface `rqt_reconfigure`
+       :width: 600px
+
+12. Résultat après modification des paramètres :
+    Le résultat affichera l'image projetée après l'ajustement des paramètres, avec la zone entourée d'un rectangle rouge.
