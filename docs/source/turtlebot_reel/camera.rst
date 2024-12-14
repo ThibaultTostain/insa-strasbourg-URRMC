@@ -325,6 +325,11 @@ Calibration de la caméra extrinsèque
 7. Sélectionner les sujets `/camera/image_extrinsic_calib/compressed` et `/camera/image_projected_compensated` sur chaque moniteur.  
    L'une des deux fenêtres affichera une image avec un rectangle rouge. L'autre affichera la vue projetée au sol (vue de dessus).
 
+.. image:: before_extrinsic_calibration.png
+   :alt: node_graph mission1
+   :width: 650
+   :align: center
+
 8. Vérification des sujets
    - `/camera/image_extrinsic_calib/compressed`
    - `/camera/image_projected_compensated`
@@ -339,13 +344,57 @@ Calibration de la caméra extrinsèque
     - Modifier la valeur du paramètre `/camera/image_projection` affecte le sujet `/camera/image_extrinsic_calib/compressed`.
     - La calibration intrinsèque de la caméra transformera l'image entourée par le rectangle rouge et affichera l'image comme vue du dessus de la voie.
 
-11. Exemple d'interface `rqt_reconfigure` :
+.. image:: extrinsic_calibration_param.png
+   :alt: node_graph mission1
+   :width: 650
+   :align: center
 
-    Voici l'exemple d'interface lorsque vous exécutez `rqt_reconfigure`.
+.. image:: after_extrinsic_calibration.png
+   :alt: node_graph mission1
+   :width: 650
+   :align: center
 
-    .. image:: rqt_reconfigure_image.png
-       :alt: Interface `rqt_reconfigure`
-       :width: 600px
+Vérifier le résultat de l'étalonnage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-12. Résultat après modification des paramètres :
-    Le résultat affichera l'image projetée après l'ajustement des paramètres, avec la zone entourée d'un rectangle rouge.
+Lorsque vous avez terminé toute la calibration de la caméra (Calibration d'Imagerie de la Caméra, Calibration Intrinsèque, Calibration Extrinsèque), assurez-vous que la calibration a été correctement appliquée à la caméra.
+Les instructions suivantes décrivent les paramètres pour la reconnaissance.
+
+1. Lancer `roscore` sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roscore
+
+2. Activer la caméra sur le SBC (Single Board Computer) :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+
+3. Exécuter le fichier de lancement de la calibration intrinsèque de la caméra sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=action
+
+4. Ouvrir un terminal et utiliser la commande sur le PC distant :
+   
+.. code-block:: bash
+
+      $ roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=action
+
+5. Exécuter `rqt` sur le PC distant :
+   
+.. code-block:: bash
+
+      $ rqt
+
+6. Exécuter `rqt_reconfigure`.
+
+.. image:: extrinsic_calibration_rqt.png
+   :alt: node_graph mission1
+   :width: 650
+   :align: center
+
+À partir de maintenant, les descriptions suivantes concerneront principalement l'ajustement du détecteur de caractéristiques / du filtre de couleur pour la reconnaissance d'objets. Chaque ajustement effectué à partir d'ici est indépendant des autres processus. Cependant, si vous souhaitez ajuster chaque paramètre de manière séquentielle, complétez chaque ajustement parfaitement, puis continuez vers le suivant.
