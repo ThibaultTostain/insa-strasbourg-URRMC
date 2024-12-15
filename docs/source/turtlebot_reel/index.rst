@@ -8,7 +8,6 @@ Guide d'installation des turtlebot3.
    :caption: Installation des TurtleBot3
 
    camera
-   lidar
    Suivi_de_ligne_et_arret_damier
    Detection_Obstacle
    Parking
